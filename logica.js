@@ -32,18 +32,38 @@ for (let i = 0; i < numbers.length; i++) {
 
 console.log(`El número más alto es: ${highestNumber}`);
 
+
+
 //alarm
 const seconds = 5;
 
 if (!isNaN(seconds) && seconds > 0) {
     
-    console.log("Esperando...");
-
+    
     
     setTimeout(() => {
-       
-        console.log("¡Alarma! Han pasado los segundos.");
+        
+        console.log(`Esperando ${seconds}`);
     }, seconds * 1000);  
+    console.log(`¡Alarma! Han pasado ${seconds} segundos` )
 } else {
     console.log("Ingresa un número de segundos válido y mayor que cero.");
 }
+
+
+
+//palíndromo
+function esPalindromo(str) {
+    const cadenaLimpia = str.toLowerCase().replace(/[^a-z]/g, "");
+    const cadenaInvertida = cadenaLimpia.split('').reverse().join('');
+    return cadenaLimpia === cadenaInvertida;
+}
+
+const entradaUsuario = "Que interesante ejercicio";
+
+if (esPalindromo(entradaUsuario)) {
+    console.log(`"${entradaUsuario}" es un palíndromo.`);
+} else {
+    console.log(`"${entradaUsuario}" no es un palíndromo.`);
+}
+
